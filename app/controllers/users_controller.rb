@@ -3,9 +3,12 @@ class UsersController < ApplicationController
 
   end
   def show
-    user = User.find_by(id: params[:id])
+    user = User.find_by_id(params[:id])
+    @proposals = user.proposals
+
     render 'faculty_homepage' if user && user.faculty == true
-    render 'staffer_homepage' if user && user.faculty == false
+    render '/user/staffer_homepage' if user && user.faculty == false
   end
+
 
 end
