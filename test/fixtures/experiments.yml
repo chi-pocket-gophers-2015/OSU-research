@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  procedure: MyString
+  results: MyString
+  conclusion: MyString
+  staffer_id: 1
+  proposal_id: 1
+
+two:
+  title: MyString
+  procedure: MyString
+  results: MyString
+  conclusion: MyString
+  staffer_id: 1
+  proposal_id: 1
