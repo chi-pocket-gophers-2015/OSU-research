@@ -1,5 +1,5 @@
 OsuResearch::Application.routes.draw do
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:edit, :update]
   root to: "sessions#new"
 end
