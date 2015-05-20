@@ -1,12 +1,13 @@
 
 # OSU-Research
-Group project for client
+This application allows faculty and staff alike at the OSU experimental lab to post proposals for experiments and keep track of them all. Staff can see a proposal and choose to create an experiment on it. 
 
 #Day one responsibilities
-###Jim
 
-###George
+###Jim *jimjoyce*
 
-###Sahil
+###George *ghrlee*
 
-###Peter
+###Sahil *srgupta*
+
+###Peter *petermanhart*
