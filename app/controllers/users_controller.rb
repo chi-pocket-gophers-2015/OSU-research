@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     render 'staffer_homepage' if user && user.faculty == false
   end
 
+  def new
+    @user = User.new
+  end
+
 end
