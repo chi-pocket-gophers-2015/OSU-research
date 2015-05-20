@@ -4,10 +4,14 @@ This application allows faculty and staff alike at the OSU experimental lab to p
 
 #Day one responsibilities
 
-###Jim #####*jimjoyce*
+###Jim 
+#####*jimjoyce*
 
-###George #####*ghrlee*
+###George 
+#####*ghrlee*
 
-###Sahil ######*srgupta*
+###Sahil 
+######*srgupta*
 
-###Peter ######*petermanhart*
+###Peter
+######*petermanhart*
