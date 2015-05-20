@@ -4,7 +4,7 @@
 
 <!-- need to get proposals controller -->
 
-<% @proposals.each do |proposal| %>
+<% current_user.experiments.each do |proposal| %>
 	<div class="proposal wrapper">
 		<h2 class="title">
 			<%= link_to proposal.title, proposal %>
