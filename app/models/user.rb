@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_protected
+
   has_many :experiments, foreign_key: :staffer_id
   has_many :observations, through: :experiments
   has_many :proposals, foreign_key: :faculty_id
@@ -24,7 +26,7 @@ class User < ActiveRecord::Base
 
   def password=(pass)
     @password = pass
-    self.hashed_password = BCrypt::Password.create(pass)
+    self.password_hash = BCrypt::Password.create(pass)
   end
 
   def valid_password(pass)
