@@ -13,4 +13,15 @@
  */
 * {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: gray;
+  transition:color .1s ease-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }

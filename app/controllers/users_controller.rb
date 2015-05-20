@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   def show
-    user = User.find_by(id: params[:id])
-    render 'faculty_homepage' if user && user.faculty == true
-    render 'staffer_homepage' if user && user.faculty == false
+    @user = User.find_by_id(params[:id])
+    session[:user_id] = @user.id
+    render 'user/faculty_homepage' if @user && @user.faculty == true
+    render 'user/staffer_homepage' if @user && @user.faculty == false
   end
 
   def new

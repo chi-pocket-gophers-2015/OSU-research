@@ -1,28 +1,40 @@
 .nav-bar-global {
   margin: 0;
   height: 4em;
+  width: 100%;
+  padding-top: 2em;
   background-color: black;
 }
 
 .nav-bar-header {
   display: inline-block;
+  width: 50%;
 }
 
 .nav-bar-header > * {
   margin: 0;
   color: white;
+  font-weight: 400;
+  margin-left: 25%;
 }
 
 .nav-bar-buttons {
   display: inline-block;
   margin: 0;
+  width: 49%;
 }
 
 .nav-options-list {
   list-style: none;
   color: white;
+  font-weight: 100;
+  margin-right: 25%;
+  float: right;
 }
 
 .nav-options-list > * {
   display: inline;
+  margin-left: 3em;
+  transition:color .2s ease-out;
 }
+
