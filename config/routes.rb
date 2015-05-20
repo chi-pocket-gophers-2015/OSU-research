@@ -1,11 +1,12 @@
 OsuResearch::Application.routes.draw do
+  resources :faculty
   resources :sessions
   resources :users, except: [:edit, :update]
   root to: "sessions#new"
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resources :faculty
+  
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
