@@ -11,5 +11,4 @@ User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', passwor
 Topic.create!(name: "Science")
 Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", status: "open", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
 Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", status: "closed", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
-
 Experiment.create!(staffer_id: 2, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
