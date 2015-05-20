@@ -1,0 +1,26 @@
+.nav-bar-global {
+  margin: 0;
+  height: 4em;
+  background-color: black;
+}
+
+.nav-bar-header {
+  display: inline-block;
+}
+
+.nav-bar-header > * {
+  margin: 0;
+}
+
+.nav-bar-buttons {
+  display: inline-block;
+  margin: 0;
+}
+
+.nav-options-list {
+  list-style: none;
+}
+
+.nav-options-list > * {
+  display: inline;
+}
