@@ -1,0 +1,14 @@
+<h1> Staffers</h1>
+<!-- staffers can view proposals, click on one and create a new experiment -->
+<h4> Choose a proposal to view <h4>
+
+<!-- need to get proposals controller -->
+
+<% @proposals.each do |proposal| %>
+	<div class="proposal wrapper">
+		<h2 class="title">
+			<%= link_to proposal.title, proposal %>
+		</h2>
+		<p class="date"><%= proposal.created_at.strftime("%B, %d, %Y") %></p>
+	</div>
+<% end %>

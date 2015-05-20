@@ -10,6 +10,7 @@
 
 .nav-bar-header > * {
   margin: 0;
+  color: white;
 }
 
 .nav-bar-buttons {
@@ -19,6 +20,7 @@
 
 .nav-options-list {
   list-style: none;
+  color: white;
 }
 
 .nav-options-list > * {
