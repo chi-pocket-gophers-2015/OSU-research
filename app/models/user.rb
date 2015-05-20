@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :proposals, foreign_key: :faculty_id
   has_many :comments
 
-  validates :username, :email, :faculty, presence: true
+  validates :username, :email, presence: true
   validates :password, presence: {message: "password can't be blank"},
     confirmation: true
 
