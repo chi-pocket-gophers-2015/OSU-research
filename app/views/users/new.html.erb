@@ -1,0 +1,18 @@
+<div id="new_user_page">
+  <%= form_for(@user) do |f| %>
+    <div class="input_field"><%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %></div>
+
+    <div class="input_field"><%= f.label :username %>
+    <%= f.text_field :username %></div>
+
+    <div class="input_field"><%= f.label :password %>
+    <%= f.password_field :password %></div>
+
+    <div class="submit"><%= f.submit "Submit" %></div>
+  <% end %>
+
+
+
+
+</div>
