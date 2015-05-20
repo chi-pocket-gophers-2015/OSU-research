@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.authenticate(session_params)
     if @user
       session[:user_id] = @user.id
-      redirect_to @user, notice: "You have successfully logged in"
+      redirect_to @user, notice: "You have successfully logged in."
     else
       @errors = ["login info is not valid"]
       render :new
