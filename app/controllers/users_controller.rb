@@ -6,4 +6,8 @@ class UsersController < ApplicationController
     render 'user/staffer_homepage' if @user && @user.faculty == false
   end
 
+  def new
+    @user = User.new
+  end
+
 end
