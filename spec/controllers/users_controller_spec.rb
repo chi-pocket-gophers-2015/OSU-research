@@ -5,22 +5,32 @@ RSpec.describe UsersController, :type => :controller do
   let!(:staff) { User.create!(email: 'jjoyce2@me.com', username: 'staff', password: 'password', faculty: false) }
 
   describe "GET #show" do
+    it "redirects if profile page not logged in" do
+      session[:user_id] = nil
+      get :show, {id: fac.id}
+      expect(response).to redirect_to(root_path)
+    end
+
     it "assigns current user as @user" do
+      session[:user_id] = fac.id
       get :show, {id: fac.id}
       expect(assigns(:user)).to eq(fac)
     end
 
     it "assigns @user's proposals as @proposals" do
+      session[:user_id] = fac.id
       get :show, {id: fac.id}
       expect(assigns(:proposals)).to eq(fac.proposals.order('created_at desc'))
     end
 
     it "renders faculty homepage if user is faculty" do
+      session[:user_id] = fac.id
       get :show, {id: fac.id}
       expect(response).to render_template('faculty_homepage')
     end
 
     it "renders staffer homepage if user is staffer" do
+      session[:user_id] = staff.id
       get :show, {id: staff.id}
       expect(response).to render_template('staffers_homepage')
     end

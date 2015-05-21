@@ -20,10 +20,14 @@
 
 <p class="status">
 		<% if @proposal.active == true %>
-			Status: Open
+			<form class="new-experiment-button" method="get" action="/experiments/new">
+				<input type="hidden" name="proposal_id" value=<%=@proposal.id%>>
+				<input type="submit" value = "Click here to create an experiment on this proposal.">
+			</form>
 		<% else %>
 			Status: Closed
 		<% end %>
 </p>
+
 
 
