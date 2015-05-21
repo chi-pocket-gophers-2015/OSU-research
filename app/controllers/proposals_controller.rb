@@ -13,6 +13,7 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to @user
     else
+      # binding.pry
       @errors = @proposal.errors.messages
       render :new
     end

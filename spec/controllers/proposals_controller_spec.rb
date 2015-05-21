@@ -20,6 +20,15 @@ RSpec.describe ProposalsController, :type => :controller do
   			expect { post :create, proposal: good_params}.to change(Proposal, :count).by(1)
   		end
   	end
+  	
+  	context "when invalid params are passed" do
+			let(:bad_params) {{title: nil, hypothesis: nil, status: nil}}
+  		it "re-renders the 'new' template" do
+  			session[:user_id] = 1
+  			post :create, proposal: bad_params
+  			expect(response).to render_template(:new)
+  		end
+  	end
   end
 
 
