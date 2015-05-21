@@ -4,4 +4,9 @@ class Proposal < ActiveRecord::Base
   has_many :experiments
 
 	validates :title, :hypothesis, :active, :summary, presence: true
+
+  def close
+    self.active = false
+  end
+
 end
