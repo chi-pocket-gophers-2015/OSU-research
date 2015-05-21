@@ -6,7 +6,19 @@
 
 }
 
+.edit-button {
+  float: right;
+  /*margin-right: 5%;*/
+  border-radius: 1em;
+  border: none;
+  background-color: #33CC33;
+  width: 10%;
+  transition:background-color .2s ease-out;
+}
 
+.edit-button:hover {
+  background-color: #44DD44;
+}
 
 .list-container {
   display: inline-block;
@@ -27,13 +39,16 @@
   text-align: center;
   padding-bottom: 3em;
   box-shadow: 0px 5px 12px 3px rgba(0, 0, 0, .15);
-  /*height: 10em;*/
+  background-color: #EEEEEE;
+  border-radius: 2em;
 }
 
 .prop-title {
   font-size: 1.5em;
   font-weight: 400;
   padding-bottom: 1em;
+  /*margin-left: 12%;*/
+  width: 100%;
 }
 
 #card-sub-title {
@@ -42,4 +57,50 @@
 
 .experiment-title {
   margin-top: 1em;
+}
+.extra-prop-links {
+  margin-top: 2em;
+}
+
+.prop-form-input {
+  display: block;
+  border: none;
+  border-radius: 2em;
+  text-indent: 2em;
+  font-size: 1em;
+  resize:none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,.05);
+}
+
+.new-proposal-head {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.new-prop-class {
+  width: 10%;
+  margin-right: .5em;
+  background-color: #33CC33;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 1em;
+}
+
+.all-prop-class {
+  display: inline-block;
+  margin-left: .5em;
+  background-color: #33CC33;
+  width: 10%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 1em;
 }
