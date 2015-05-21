@@ -1,10 +1,7 @@
 class ProposalsController < ApplicationController
-  def index
-    @proposals = Proposal.all
-    render :proposals
-  end
 
   def new
+    # binding.pry
     @user = User.find_by_id(session[:user_id])
     @proposal = @user.proposals.new
     render :new
