@@ -14,6 +14,7 @@ gem 'simplecov'
 group :development, :test do
   gem 'sqlite3'
   gem 'capybara'
+  gem 'rspec-rails', '~> 3.0'
 end
 group :production do
   gem 'pg'

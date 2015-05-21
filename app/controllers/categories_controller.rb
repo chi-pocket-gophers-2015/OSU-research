@@ -8,5 +8,4 @@ class CategoriesController < ApplicationController
     @proposals = @category.proposals.all
     render :category_show
   end
-
 end
