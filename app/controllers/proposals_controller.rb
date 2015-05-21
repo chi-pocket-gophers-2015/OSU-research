@@ -4,8 +4,8 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @user = User.find_by_id(session[:user_id])
-    @proposal = @user.proposals.new
+    # @user = User.find_by_id(session[:user_id])
+    @proposal = Proposal.new
     render :new
   end
 
