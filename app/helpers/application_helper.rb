@@ -9,4 +9,8 @@ module ApplicationHelper
     current_user != nil
   end
 
+  def check_if_faculty
+    current_user.faculty == true
+  end
+
 end

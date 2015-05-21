@@ -4,6 +4,10 @@ class ProposalsController < ApplicationController
     render :proposals
   end
 
+  def show
+    @proposal = Proposal.find_by_id(params[:id])
+  end
+
   def new
     @user = User.find_by_id(session[:user_id])
     @proposal = @user.proposals.new

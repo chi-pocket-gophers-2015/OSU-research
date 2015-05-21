@@ -1,0 +1,16 @@
+<%= render "partials/header_bar" %>
+<div class="experiment-container">
+  <div class="title-header">
+    <h1 id="main-title"><%= @experiment.title %></h1>
+    <h4>By: <%= @experiment.staffer.username %></h4>
+  </div>
+  <div class="exp-body-container">
+    <div class = "procedure-header">
+      <h1>Procedure:</h1>
+    </div>
+    <div clss="procedure-body">
+      <%=@experiment.procedure %>
+    </div>
+
+  </div>
+</div>
