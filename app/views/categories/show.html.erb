@@ -1,0 +1,18 @@
+<%= render 'partials/header_bar' %>
+
+<div class="prop-list-container">
+  <% @proposals.each do |proposal|%>
+  <div class="ind-list-container">
+    <!-- <button class="edit-button">edit</button> -->
+    <p class="prop-title"><%= proposal.title %></p>
+    <p><strong>Hypothesis:</strong> <%= proposal.hypothesis %></p><br>
+
+    <p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>
+
+  <%proposal.experiments.each do | exp |%>
+    <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
+    <% end %>
+
+  </div>
+  <% end %>
+</div>

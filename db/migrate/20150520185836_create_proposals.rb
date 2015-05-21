@@ -6,7 +6,7 @@ class CreateProposals < ActiveRecord::Migration
       t.boolean :status
       t.string :summary
       t.belongs_to :faculty, class_name: "User"
-      t.belongs_to :topic
+      t.belongs_to :category
 
       t.timestamps
     end
