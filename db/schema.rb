@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(:version => 20150520190143) do
     t.string   "procedure"
     t.string   "results"
     t.string   "conclusion"
+    t.boolean  "active",      :default => true
     t.integer  "staffer_id"
     t.integer  "proposal_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "observations", :force => true do |t|

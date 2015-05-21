@@ -26,9 +26,9 @@ while i < 10
 
   User.create!(email: "jjoyce"+ i.to_s + "@me.com", username: 'jjoyce' + i.to_s, password: 'password', faculty: false)
 
-  Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i)
+  3.times { Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i) }
 
-  Experiment.create!(staffer_id: i, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
+  5.times { Experiment.create!(staffer_id: i, proposal_id: i, title: Faker::Name.title, results: Faker::Lorem.sentence, conclusion: Faker::Lorem.paragraph, procedure: Faker::Lorem.paragraph) }
   10.times { Observation.create!(experiment_id: i, body: Faker::Lorem.paragraph) }
   i += 1
 end

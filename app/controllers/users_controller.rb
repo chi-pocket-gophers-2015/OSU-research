@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   def show
     redirect_to root_path if !current_user
     @user = current_user
