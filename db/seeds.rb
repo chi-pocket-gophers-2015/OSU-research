@@ -8,6 +8,7 @@
 
 User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: true)
 User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', password: 'password', faculty: false)
+User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
 
 Category.create!(name: "Risk Perception")
 Category.create!(name: "Risky and Nonrisky decisions")

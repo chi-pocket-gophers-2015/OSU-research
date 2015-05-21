@@ -1,14 +1,14 @@
 <h1> Staffers</h1>
 <!-- staffers can view proposals, click on one and create a new experiment -->
-<h4> Choose a proposal to view <h4>
+<h4> Choose an experiment to view <h4>
 
 <!-- need to get proposals controller -->
 
-<% current_user.experiments.each do |proposal| %>
-	<div class="proposal wrapper">
+<% @user.experiments.each do |experiment| %>
+	<div class="experiment wrapper">
 		<h2 class="title">
-			<%= link_to proposal.title, proposal %>
+			<%= link_to experiment.title, experiment %>
 		</h2>
-		<p class="date"><%= proposal.created_at.strftime("%B, %d, %Y") %></p>
+		<p class="date"><%= experiment.created_at.strftime("%B, %d, %Y") %></p>
 	</div>
 <% end %>
