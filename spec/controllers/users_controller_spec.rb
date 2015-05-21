@@ -31,26 +31,39 @@ RSpec.describe UsersController, :type => :controller do
       get :new
       expect(assigns(:user)).to be_an_instance_of(User)
     end
-
-    it "renders sign-up page" do
-      # expect(current_path).to eq(new_user_path)
-    end
   end
 
   describe "POST #create" do
     context "when valid params are passed" do
-      it "creates a new User"
+      let(:good_params) {{email: 'p@p.com', username: 'p', password: 'password', secret_code: 'faculty'}}
+      it "creates a new User" do
+        expect {post :create, user: good_params}.to change(User, :count).by(1)
+      end
 
-      it "assigns a newly created user as @user"
+      it "assigns a newly created user as @user" do
+        post :create, user: good_params
+        expect(assigns(:user)).to be_an_instance_of(User)
+      end
 
-      it "redirects to the user's homepage"
+      it "redirects to the user's homepage" do
+        post :create, user: good_params
+        expect(response).to redirect_to(user_path(assigns(:user)))
+      end
 
     end
 
     context "when invalid params are passed" do
-      it "assigns a newly created but unsaved user as @user"
+      let(:bad_params) {{email: 'p@p', username: 'p', password: 'password', secret_code: 'horse'}}
+      it "assigns a newly created but unsaved user as @user" do
+        post :create, user: bad_params
+        expect(assigns(:user)).to be_a_new(User)
+        expect(assigns(:user).id).to be_nil
+      end
 
-      it "re-renders the 'new' template"
+      it "re-renders the 'new' template" do
+        post :create, user: bad_params
+        expect(response).to render_template(:new)
+      end
 
     end
 
