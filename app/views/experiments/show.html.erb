@@ -5,6 +5,11 @@
     <h4>By: <%= @experiment.staffer.username %></h4>
   </div>
   <div class="exp-body-container">
+    <div class="exp-proposal-container">
+      <h1>Proposal: </h1>
+      <p><strong>Title:   </strong><%= @experiment.proposal.title%></p> <br>
+      <p><strong>Summary:</strong> <%= @experiment.proposal.summary%> </p>
+    </div>
     <div class = "procedure-header">
       <h1>Procedure:</h1>
     </div>
@@ -12,5 +17,32 @@
       <%=@experiment.procedure %>
     </div>
 
+    <div class = "procedure-header">
+      <h1>Results:</h1>
+    </div>
+    <div clss="procedure-body">
+      <%=@experiment.results %>
+    </div>
+
+    <div class = "procedure-header">
+      <h1>Conclusion:</h1>
+    </div>
+    <div clss="procedure-body">
+      <%=@experiment.conclusion %>
+    </div>
   </div>
+  <div class="observation-container">
+    <div class="observation-header">
+      <h1>Observations</h1>
+  </div>
+  <% @experiment.observations.all.each do | obs |%>
+    <div class="ind-observation">
+      <%= obs.body %>
+    </div>
+  <% end %>
+  <div class="add-observation">
+      <a href="/experiments/<%=@experiment.id%>/observations/new">Add observation</a>
+    </div>
+  </div>
+
 </div>
