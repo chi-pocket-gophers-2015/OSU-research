@@ -31,4 +31,4 @@ while i < 10
   Experiment.create!(staffer_id: i, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
   10.times { Observation.create!(experiment_id: i, body: Faker::Lorem.paragraph) }
   i += 1
-end
+en
