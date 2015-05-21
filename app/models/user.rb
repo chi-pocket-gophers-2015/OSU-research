@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include BCrypt
   # attr_accessor :secret_code
   attr_protected
 
@@ -28,7 +29,7 @@ class User < ActiveRecord::Base
 
   def password=(pass)
     @password = pass
-    self.password_hash = BCrypt::Password.create(pass)
+    self.password_hash = Password.create(pass)
   end
 
   def secret_code=(code)
@@ -36,8 +37,8 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(user_info)
-    user = User.find_by(username: user_info[:username])
-    return user if user.hashed_password == Password.new(user_info[:password])
+    user = User.find_by_username(user_info[:username])
+    return user if user.password == user_info[:password]
   end
 
 end
