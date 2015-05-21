@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
     if current_user
       redirect_to user_path(current_user)
@@ -24,6 +25,7 @@ class SessionsController < ApplicationController
   end
 
   private
+
   def session_params
     params.require(:session).permit(:username, :password)
   end

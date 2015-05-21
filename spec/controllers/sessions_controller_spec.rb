@@ -5,6 +5,13 @@ RSpec.describe SessionsController, :type => :controller do
   let!(:staff) { User.create!(email: 'jjoyce2@me.com', username: 'staff', password: 'password', faculty: false) }
 
   describe "GET #new" do
+    it "redirects to homem page if already logged in" do
+      session[:user_id] = fac.id
+      get :new
+      expect(response).to redirect_to(user_path(fac))
+      session[:user_id] = nil
+    end
+
     it "assigns a new User instance as @user" do
       get :new
       expect(assigns(:user)).to be_an_instance_of(User)
