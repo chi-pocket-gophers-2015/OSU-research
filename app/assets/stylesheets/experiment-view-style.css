@@ -82,4 +82,12 @@ div.procedure-body{
   color: white;
 }
 
+.exp-new-form > * {
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+}
+
 
