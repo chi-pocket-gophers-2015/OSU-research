@@ -11,8 +11,13 @@ class ProposalsController < ApplicationController
   def new
     # binding.pry
     @user = User.find_by_id(session[:user_id])
-    @proposal = @user.proposals.new
-    render :new
+    if @user.faculty
+      @proposal = @user.proposals.new
+      render :new
+    else
+      @errors = ["I'm sorry, you must have Faculty clearance to create a new proposal"]
+      redirect_to user_path(@user)
+    end
   end
 
   def create

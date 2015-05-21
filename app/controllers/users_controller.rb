@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   def show
-
-    @user = User.find_by_id(params[:id])
-    session[:user_id] = @user.id
-    @all_proposals = Proposal.all
-    @ordered_proposals = @user.proposals.order('created_at desc')
+    redirect_to root_path if !current_user
+    @user = current_user
+    @proposals = @user.proposals.order('created_at desc')
+    @staff_proposals = @proposals.limit(5)
     render 'faculty_homepage' if @user && @user.faculty == true
     render 'staffers_homepage' if @user && @user.faculty == false
   end
