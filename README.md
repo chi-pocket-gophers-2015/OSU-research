@@ -36,3 +36,8 @@ Launch your browser and go to the address **localhost/3000** and the app will be
 # As faculty or staff, I want to be able to comment on proposals and experiments.
 
 
+# Link to Trello Board: https://trello.com/b/w5qd0aiV
+# Link to master GitHub Repo: https://github.com/chi-pocket-gophers-2015/OSU-research
+# Link to Heroku:
+
+
