@@ -3,26 +3,28 @@
   <% if @errors %>
     <div id="errors">
       <h2><%= pluralize(@errors.count, "error") %> prevented this post from saving</h2>
-      <ul>
-        <% @errors.each do |msg| %>
-          <li><%= msg %> </li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @errors.each do |msg| %>
+            <li><%= msg %> </li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
 
-  <h2>Please Log In</h2>
-  <%= form_for(:session, url: '/sessions') do |f| %>
-    <div class="input_field"><%= f.label :username %>
-    <%= f.text_field :username %></div>
+  <div class="login">
+    <h2>Please Log In</h2>
+    <%= form_for(:session, url: '/sessions') do |f| %>
+      <p><div class="input_field"><%= f.text_field :username, placeholder: "Username" %></div></p>
 
-    <div class="input_field"><%= f.label :password %>
-    <%= f.password_field :password %></div>
+      <p><div class="input_field"><%= f.password_field :password, placeholder: "Password" %></div></p>
 
-   	<div class="submit"><%= f.submit "Submit" %></div>
-  <% end %>
-  <br><br>
-  Or <%=link_to "Sign Up", new_user_path%>
+     	<p><div class="submit"><%= f.submit "Submit" %></div></p>
+    <% end %>
+  </div>
+
+  <div class="sign_up">
+    <p>Don't have an account? <%= link_to "Click here to Sign Up", new_user_path %>.</p>
+  </div>
 
 
 </div>
