@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe CategoriesController, :type => :controller do
+  let!(:categories) { Category.all }
+
+  describe "GET #index" do
+    it "assigns all categories as @categories" do
+      get :index
+      expect(assigns(:categories)).to eq(categories)
+    end
+  end
+
+  describe "GET #show" do
+    it "assigns the requested category as @category"
+
+    it "assigns all proposals for the category as @proposals"
+
+  end
 
 
 end

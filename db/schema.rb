@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(:version => 20150520190143) do
   create_table "proposals", :force => true do |t|
     t.string   "title"
     t.string   "hypothesis"
-    t.boolean  "active"
+    t.boolean  "active",      :default => true
     t.string   "summary"
     t.integer  "faculty_id"
     t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "users", :force => true do |t|
