@@ -33,7 +33,7 @@ class ExperimentsController < ApplicationController
   private
 
   def experiment_params
-    params.require(:experiment).permit( :title, :results, :conclusion, :procedure)
+    params.require(:experiment).permit(:proposal_id, :title, :results, :conclusion, :procedure)
   end
 
 
