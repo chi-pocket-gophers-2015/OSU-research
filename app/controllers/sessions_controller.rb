@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include ApplicationHelper
   def new
     if current_user
       redirect_to user_path(current_user)
