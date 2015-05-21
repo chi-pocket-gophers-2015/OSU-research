@@ -4,7 +4,6 @@
   <% @proposals.each do |proposal|%>
   <div class="ind-list-container">
     <p class="prop-title"><%= link_to(proposal.title, proposal_path(proposal)) %></p>
-    <p><strong>Hypothesis:</strong> <%= proposal.hypothesis %></p><br>
 
     <% if check_if_faculty %>
       <%= render 'partials/experiments_list', locals: {proposal: proposal} %>
