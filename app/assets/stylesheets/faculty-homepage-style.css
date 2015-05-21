@@ -1,0 +1,119 @@
+#proposals-list {
+  width: 80%;
+  /*border: 1px solid black;*/
+  padding-top: 3%;
+  box-shadow: 3px 3px 6px 3px rbga(0,0,0,.1);
+
+}
+
+.edit-button {
+  float: right;
+  /*margin-right: 5%;*/
+  border-radius: 1em;
+  border: none;
+  background-color: #33CC33;
+  width: 10%;
+  transition:background-color .2s ease-out;
+}
+
+.edit-button:hover {
+  background-color: #44DD44;
+}
+
+.list-container {
+  display: inline-block;
+  width: 40%;
+  height: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+
+}
+
+.ind-list-container {
+  display: block;
+  padding-top: 1em;
+  margin-top: 2em;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 3em;
+  box-shadow: 0px 5px 12px 3px rgba(0, 0, 0, .15);
+  background-color: #EEEEEE;
+  border-radius: 2em;
+}
+
+.prop-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-bottom: 1em;
+  /*margin-left: 12%;*/
+  width: 100%;
+}
+
+#card-sub-title {
+  font-weight: 100;
+}
+
+.experiment-title {
+  margin-top: 1em;
+}
+.extra-prop-links {
+  margin-top: 2em;
+}
+
+.prop-form-input {
+  display: block;
+  border: none;
+  border-radius: 2em;
+  text-indent: 2em;
+  font-size: 1em;
+  resize:none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,.05);
+}
+
+input[type="submit"] {
+  text-indent: 0;
+  width: 15%;
+  color: black;
+  transition:background-color, color .2s, .2s ease-out, ease-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #33CC33;
+  color: white;
+  cursor: pointer;
+}
+
+.new-proposal-head {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.new-prop-class {
+  width: 10%;
+  margin-right: .5em;
+  background-color: #33CC33;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 1em;
+}
+
+.all-prop-class {
+  display: inline-block;
+  margin-left: .5em;
+  background-color: #33CC33;
+  width: 10%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 1em;
+}

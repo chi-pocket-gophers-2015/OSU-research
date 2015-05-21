@@ -1,28 +1,57 @@
 .nav-bar-global {
   margin: 0;
   height: 4em;
-  background-color: black;
+  width: 100%;
+  padding-top: 2em;
+  background-color: rgb(188, 0, 0);
 }
 
 .nav-bar-header {
   display: inline-block;
+  width: 50%;
 }
 
 .nav-bar-header > * {
   margin: 0;
-  color: white;
+  color: #DADADA;
+  font-weight: 400;
+  margin-left: 25%;
 }
 
 .nav-bar-buttons {
   display: inline-block;
   margin: 0;
+  width: 49%;
 }
 
 .nav-options-list {
   list-style: none;
   color: white;
+  font-weight: 100;
+  margin-right: 25%;
+  float: right;
 }
 
-.nav-options-list > * {
-  display: inline;
+.nav-options-list > li {
+  margin-left: 3em;
+}
+
+
+.list-item {
+  display: inline-block;
+  transition:transform .2s ease-out;
+}
+
+.list-item:hover {
+  transform:scale(1.1);
+  color: white;
+}
+
+.list-item > a {
+  color: #DADADA;
+  transition:color .2s, ease-out;
+}
+
+.list-item > a:hover {
+  color:white;
 }
