@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails'#, '3.2.13'
+gem 'strong_parameters'
 gem 'bcrypt'
 gem 'pry'
 gem 'faker'
 gem 'factory_girl'
+gem 'simplecov'
+# gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
+  include BCrypt
+  # attr_accessor :secret_code
   attr_protected
+
+  # has_secure_password
+
+  CODES = %w(faculty staffer)
 
   has_many :experiments, foreign_key: :staffer_id
   has_many :observations, through: :experiments
@@ -7,17 +13,14 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :username, :email, presence: true
-  validates :password, presence: {message: "password can't be blank"},
+  validates :faculty, inclusion: {in: [true, false],
+    message: "Invalid secret code"}
+  validates :password, presence: {message: "Password can't be blank"},
     confirmation: true
 
-  # def initialize(params)
-  #   super(params)
-  #   determine_faculty(params[:secret_code])
-  # end
-
   def determine_faculty(code)
-    self.faculty = true if code == 'faculty'
-    self.faculty = false if code == 'staffer'
+    self.faculty = true if code.downcase == 'faculty'
+    self.faculty = false if code.downcase == 'staffer'
   end
 
   def password
@@ -26,16 +29,16 @@ class User < ActiveRecord::Base
 
   def password=(pass)
     @password = pass
-    self.password_hash = BCrypt::Password.create(pass)
+    self.password_hash = Password.create(pass)
   end
 
-  def valid_password(pass)
-    pass.length > 0
+  def secret_code=(code)
+    determine_faculty(code)
   end
 
   def self.authenticate(user_info)
-    user = User.find_by(username: user_info[:username])
-    return user if user.hashed_password == Password.new(user_info[:password])
+    user = User.find_by_username(user_info[:username])
+    return user if user.password == user_info[:password]
   end
 
 end
