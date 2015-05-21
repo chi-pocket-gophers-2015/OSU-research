@@ -8,9 +8,9 @@
 
 User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: true)
 User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', password: 'password', faculty: false)
-User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: false)
+User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
 
-Topic.create!(name: "Science")
+Category.create!(name: "Science")
 Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", status: "open", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
 Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", status: "closed", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
 
