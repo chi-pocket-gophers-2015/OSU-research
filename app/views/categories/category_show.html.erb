@@ -9,10 +9,13 @@
 
     <p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>
 
-  <%proposal.experiments.each do | exp |%>
-    <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
+    <% if check_if_faculty %>
+      <%proposal.experiments.each do | exp |%>
+        <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
+      <% end %>
+  <!-- end below for if statement -->
     <% end %>
-
   </div>
+  <!-- end below for inital each on @proposals -->
   <% end %>
 </div>
