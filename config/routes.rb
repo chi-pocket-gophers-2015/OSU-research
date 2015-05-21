@@ -1,5 +1,6 @@
 OsuResearch::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
+  resources :categories, except: [:delete]
   resources :users, except: [:edit, :update]
   resources :proposals, only: [:new, :create]
   resources :experiments, except: [:delete]

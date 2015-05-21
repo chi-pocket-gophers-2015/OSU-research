@@ -8,10 +8,17 @@
 
 User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: true)
 User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', password: 'password', faculty: false)
-User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: false)
 
-Topic.create!(name: "Science")
-Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", status: "open", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
-Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", status: "closed", summary: "Find out if it truly is", faculty_id: 1, topic_id: 1)
+Category.create!(name: "Risk Perception")
+Category.create!(name: "Risky and Nonrisky decisions")
+Category.create!(name: "Heuristics")
+Category.create!(name: "Numeracy")
+Category.create!(name: "Predictive Models and Optimization")
+Category.create!(name: "Neuroeconomics")
+Category.create!(name: "Experimental Economics")
+Category.create!(name: "Probability Theory")
+Category.create!(name: "Game Theory")
 
+Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", status: "open", summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
+Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", status: "closed", summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
 Experiment.create!(staffer_id: 2, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
