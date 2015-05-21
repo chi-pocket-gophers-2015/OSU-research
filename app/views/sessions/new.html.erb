@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="logo">
+    <img src="<%= image_path('osu_logo.jpeg') %>"><br><br><br>
+  </div>
+
   <div class="login">
     <h2>Please Log In</h2>
     <%= form_for(:session, url: '/sessions') do |f| %>
@@ -25,6 +29,7 @@
   <div class="sign_up">
     <p>Don't have an account? <%= link_to "Click here to Sign Up", new_user_path %>.</p>
   </div>
+
 
 
 </div>
