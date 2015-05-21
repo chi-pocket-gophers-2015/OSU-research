@@ -3,19 +3,17 @@
 <div class="prop-list-container">
   <% @proposals.each do |proposal|%>
   <div class="ind-list-container">
-    <!-- <button class="edit-button">edit</button> -->
-    <p class="prop-title"><%= proposal.title %></p>
+    <p class="prop-title"><%= link_to(proposal.title, proposal_path(proposal)) %></p>
     <p><strong>Hypothesis:</strong> <%= proposal.hypothesis %></p><br>
 
-    <p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>
-
     <% if check_if_faculty %>
-      <%proposal.experiments.each do | exp |%>
-        <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
+      <%= render 'partials/experiments_list', locals: {proposal: proposal} %>
+      </div>
+    <% else %>
+      <% render 'partials/experiments_staffer_list', locals: {proposal: proposal} %>
+      </div>
       <% end %>
-  <!-- end below for if statement -->
-    <% end %>
-  </div>
-  <!-- end below for inital each on @proposals -->
+
+
   <% end %>
 </div>
