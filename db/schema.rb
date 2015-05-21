@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20150520190143) do
   create_table "proposals", :force => true do |t|
     t.string   "title"
     t.string   "hypothesis"
-    t.boolean  "status"
+    t.boolean  "active"
     t.string   "summary"
     t.integer  "faculty_id"
     t.integer  "category_id"

@@ -3,7 +3,7 @@ class CreateProposals < ActiveRecord::Migration
     create_table :proposals do |t|
       t.string :title
       t.string :hypothesis
-      t.boolean :status
+      t.boolean :active
       t.string :summary
       t.belongs_to :faculty, class_name: "User"
       t.belongs_to :category

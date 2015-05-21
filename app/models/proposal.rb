@@ -3,5 +3,5 @@ class Proposal < ActiveRecord::Base
   belongs_to :category
   has_many :experiments
 
-	validates :title, :hypothesis, :status, :summary, presence: true  
+	validates :title, :hypothesis, :active, :summary, presence: true
 end
