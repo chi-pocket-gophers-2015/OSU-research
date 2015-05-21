@@ -1,13 +1,14 @@
-body {
+/*body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
   color: #404040;
   background: #bb0000;
 }
 
 #log_in_page {
-  /*text-align: center*/
+
   margin: 50px auto;
   width: 640px;
+
 }
 
 .login:before {
@@ -148,3 +149,4 @@ input[type=submit] {
 }
 
 
+*/
