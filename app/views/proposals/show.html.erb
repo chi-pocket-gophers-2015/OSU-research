@@ -1,9 +1,8 @@
 <%= render "partials/header_bar" %>
 <h1> Proposal</h1>
-<!-- staffers can view proposals, click on one and create a new experiment -->
+
 <h4> Details for this proposal<h4>
 
-<!-- need to get proposals controller -->
 
 <h1 class="title">
 	<%= @proposal.title %>
@@ -14,9 +13,9 @@
 </p>
 
 <p class="body">
-		<%= @proposal.hypothesis %>
+		Hypothesis: <%= @proposal.hypothesis %><br><br>
 
-		<%= @proposal.summary %>
+		Summary: <%= @proposal.summary %>
 </p>
 
 <p class="status">
