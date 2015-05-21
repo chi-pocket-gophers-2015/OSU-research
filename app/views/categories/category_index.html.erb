@@ -1,0 +1,12 @@
+<%= render 'partials/header_bar' %>
+<div class="topic-list-container">
+  <div class="topic-header"><h1>Topics</h1></div>
+  <div class="topic-name-container">
+    <% Category.all.each do |cat| %>
+      <div class="ind-topic-container">
+        <%= link_to(cat.name, category_path(cat)) %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

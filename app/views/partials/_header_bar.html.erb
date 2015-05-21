@@ -5,7 +5,7 @@
 
   <div class="nav-bar-buttons">
     <ul class="nav-options-list">
-      <li class="list-item"><a href="/categories">Categories</a></li>
+      <li class="list-item"><%= link_to("Categories", categories_path) %></a></li>
       <li class="list-item"><%= button_to("Log out", :sessions, method: :delete) %></li>
     </ul>
   </div>

@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(:version => 20150520190143) do
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "comments", :force => true do |t|
     t.string   "body"
     t.integer  "user_id"
@@ -46,15 +52,9 @@ ActiveRecord::Schema.define(:version => 20150520190143) do
     t.boolean  "status"
     t.string   "summary"
     t.integer  "faculty_id"
-    t.integer  "topic_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "topics", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
