@@ -1,10 +1,11 @@
 class ProposalsController < ApplicationController
-  def index
-    @proposals = Proposal.all
-    render :proposals
+
+  def show
+    @proposal = Proposal.find_by_id(params[:id])
   end
 
   def new
+    # binding.pry
     @user = User.find_by_id(session[:user_id])
     @proposal = @user.proposals.new
     render :new
@@ -16,6 +17,7 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to @user
     else
+      # binding.pry
       @errors = @proposal.errors.messages
       render :new
     end
