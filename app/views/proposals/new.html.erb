@@ -1,0 +1,8 @@
+<%= render 'partials/header_bar' %>
+<h1 class="new-proposal-head">New Proposal</h1>
+<%= form_for(@proposal) do | f | %>
+  <%= f.text_field :title, placeholder: "Title", class: "prop-form-input" %>
+  <%= f.text_area :hypothesis, cols: 48, rows: 6, placeholder: "Hypothesis", class: "prop-form-input" %>
+  <%= f.text_area :summary, cols: 48, rows: 6, placeholder: "Summary", class: "prop-form-input" %>
+  <%= f.submit class: "prop-form-input"%>
+<%end%>

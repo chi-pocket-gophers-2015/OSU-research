@@ -16,12 +16,17 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  background-color: #EAEAEA;
+  padding-bottom: 10%;
+}
+
 a {
-  color: gray;
-  transition:color .1s ease-out;
+  color: #666666;
   text-decoration: none;
+  transition:color .1s ease-out;
 }
 
 a:hover {
-  color: white;
+  color: #FFFFFF;
 }

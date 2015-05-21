@@ -6,6 +6,7 @@ gem 'bcrypt'
 gem 'pry'
 gem 'faker'
 gem 'factory_girl'
+gem 'simplecov'
 # gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +14,7 @@ gem 'factory_girl'
 group :development, :test do
   gem 'sqlite3'
   gem 'capybara'
+  gem 'rspec-rails', '~> 3.0'
 end
 group :production do
   gem 'pg'

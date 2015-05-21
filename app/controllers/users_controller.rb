@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
+    session[:user_id] = @user.id
+    @proposals = @user.proposals.order('created_at desc')
     render 'faculty_homepage' if @user && @user.faculty == true
     render 'staffers_homepage' if @user && @user.faculty == false
   end
@@ -26,5 +28,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :username, :password)
   end
-
 end

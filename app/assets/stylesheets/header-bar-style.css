@@ -3,7 +3,7 @@
   height: 4em;
   width: 100%;
   padding-top: 2em;
-  background-color: black;
+  background-color: rgb(188, 0, 0);
 }
 
 .nav-bar-header {
@@ -13,7 +13,7 @@
 
 .nav-bar-header > * {
   margin: 0;
-  color: white;
+  color: #DADADA;
   font-weight: 400;
   margin-left: 25%;
 }
@@ -32,9 +32,26 @@
   float: right;
 }
 
-.nav-options-list > * {
-  display: inline;
+.nav-options-list > li {
   margin-left: 3em;
-  transition:color .2s ease-out;
 }
 
+
+.list-item {
+  display: inline-block;
+  transition:transform .2s ease-out;
+}
+
+.list-item:hover {
+  transform:scale(1.1);
+  color: white;
+}
+
+.list-item > a {
+  color: #DADADA;
+  transition:color .2s, ease-out;
+}
+
+.list-item > a:hover {
+  color:white;
+}
