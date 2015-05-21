@@ -3,7 +3,7 @@
 
     <div id="proposal-header"><h1>Your Proposals</h1></div>
 
-    <% current_user.proposals.each do |proposal|%>
+    <% @proposals.each do |proposal|%>
       <div class="ind-list-container">
         <!-- <button class="edit-button">edit</button> -->
         <p class="prop-title"><%= proposal.title %></p>
@@ -19,6 +19,6 @@
       <% end %>
       <div class="extra-prop-links">
       <%= link_to "New Proposal", new_proposal_path, :class => "new-prop-class" %>
-      <%= link_to "See all proposals", proposals_path, class: "all-prop-class" %>
+      <%= link_to "All Proposals", proposals_path, class: "all-prop-class" %>
       </div>
   </div>
