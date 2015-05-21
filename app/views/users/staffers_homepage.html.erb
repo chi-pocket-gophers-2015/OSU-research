@@ -27,7 +27,7 @@
 
 <!-- need to get proposals controller -->
 
-<% @user.experiments.each do |experiment| %>
+<% @user.experiments.order('created_at desc').each do |experiment| %>
 	<div class="experiment wrapper">
 		<h2 class="title">
 			<%= link_to experiment.title, experiment %>
