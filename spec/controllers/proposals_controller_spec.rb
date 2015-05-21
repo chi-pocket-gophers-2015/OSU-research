@@ -12,7 +12,14 @@ RSpec.describe ProposalsController, :type => :controller do
   	end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
+  	context "when valid params are passed" do
+  		let(:good_params) {{title: "Awesome Proposal", hypothesis: "It's awesome", status: true, summary: "All good"}}
+  		it "creates a new Proposal" do
+  			session[:user_id] = 1
+  			expect { post :create, proposal: good_params}.to change(Proposal, :count).by(1)
+  		end
+  	end
   end
 
 
