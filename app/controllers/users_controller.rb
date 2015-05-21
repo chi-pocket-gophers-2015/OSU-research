@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  include ApplicationHelper
+
   def show
-    redirect_to root_path if !current_user
+    return redirect_to root_path if !current_user
     @user = current_user
     @proposals = @user.proposals.order('created_at desc')
     @staff_proposals = @proposals.limit(5)
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :username, :password)
   end

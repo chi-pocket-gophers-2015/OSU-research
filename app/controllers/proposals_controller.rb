@@ -9,8 +9,7 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    # binding.pry
-    @user = User.find_by_id(session[:user_id])
+    @user = current_user
     if @user.faculty
       @proposal = @user.proposals.new
       render :new
@@ -21,7 +20,7 @@ class ProposalsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_id(session[:user_id])
+    @user = current_user
     @proposal = @user.proposals.new(proposal_params)
     if @proposal.save
       redirect_to @user
