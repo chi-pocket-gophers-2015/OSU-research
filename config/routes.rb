@@ -2,7 +2,7 @@ OsuResearch::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :categories, except: [:delete]
   resources :users, except: [:edit, :update]
-  resources :proposals, only: [:new, :create]
+  resources :proposals, only: [:show, :new, :create]
   resources :experiments, except: [:delete]
   root to: "sessions#new"
 end

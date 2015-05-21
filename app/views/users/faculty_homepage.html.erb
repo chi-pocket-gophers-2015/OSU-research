@@ -5,8 +5,7 @@
 
     <% @proposals.each do |proposal|%>
       <div class="ind-list-container">
-        <!-- <button class="edit-button">edit</button> -->
-        <p class="prop-title"><%= proposal.title %></p>
+        <p class="prop-title"><%= link_to(proposal.title, proposal_path(proposal)) %></p>
         <p><strong>Hypothesis:</strong> <%= proposal.hypothesis %></p><br>
 
         <p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>

@@ -1,25 +1,25 @@
+<%= render "partials/header_bar" %>
 <h1> Proposal</h1>
-<!-- staffers can view proposals, click on one and create a new experiment -->
+
 <h4> Details for this proposal<h4>
 
-<!-- need to get proposals controller -->
 
 <h1 class="title">
 	<%= @proposal.title %>
 </h1>
 
 <p class="date">
-	Submitted <%= time_ago_in_words(@proposal.created_at) %> ago 
+	Submitted <%= time_ago_in_words(@proposal.created_at) %> ago
 </p>
 
 <p class="body">
-		<%= @proposal.hypothesis %>
+		Hypothesis: <%= @proposal.hypothesis %><br><br>
 
-		<%= @proposal.summary %>
+		Summary: <%= @proposal.summary %>
 </p>
 
 <p class="status">
-		<% @proposal.status = true %>
+		<% if @proposal.status == true %>
 			Status: Open
 		<% else %>
 			Status: Closed
