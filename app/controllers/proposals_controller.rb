@@ -27,6 +27,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, :hypothesis, :summary, :status)
+    params.require(:proposal).permit(:title, :hypothesis, :summary, :active)
   end
 end
