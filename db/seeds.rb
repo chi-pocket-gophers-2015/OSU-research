@@ -7,8 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: true)
-User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', password: 'password', faculty: false)
-User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
+
 
 Category.create!(name: "Risk Perception")
 Category.create!(name: "Risky and Nonrisky decisions")
@@ -20,10 +19,16 @@ Category.create!(name: "Experimental Economics")
 Category.create!(name: "Probability Theory")
 Category.create!(name: "Game Theory")
 
-Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", active: true, summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
-Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", active: true, summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
-Experiment.create!(staffer_id: 2, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
-Observation.create!(experiment_id: 1, body: "This was a greate experiment. I learned a lot. Super cool super fun time.")
-Observation.create!(experiment_id: 1, body: "I lost my keys today. It was still a good day, though. Oh well, live and learn.")
-Observation.create!(experiment_id: 1, body: "MAN I JUST LOVE SCIENCE SO MUCH GO TEAM!")
-Observation.create!(experiment_id: 1, body: "also, o'doyle rules")
+
+i = 1
+while i < 10
+  User.create!(email: "email"+ i.to_s + "@aol.com", username: 'user' + i.to_s, password: 'password', faculty: true)
+
+  User.create!(email: "jjoyce"+ i.to_s + "@me.com", username: 'jjoyce' + i.to_s, password: 'password', faculty: false)
+
+  Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i)
+
+  Experiment.create!(staffer_id: i, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
+  10.times { Observation.create!(experiment_id: i, body: Faker::Lorem.paragraph) }
+  i += 1
+end
