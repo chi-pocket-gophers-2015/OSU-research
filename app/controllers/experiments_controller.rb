@@ -26,6 +26,10 @@ class ExperimentsController < ApplicationController
     end
   end
 
+  # def edit
+
+  # end
+
   # def update
   #   @experiment =
   # end
