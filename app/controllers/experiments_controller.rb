@@ -5,9 +5,10 @@ class ExperimentsController < ApplicationController
   end
 
   def new
+    @proposal = Proposal.find_by_id(params[:proposal_id])
     @user = current_user
-    if @user.staffer
-      @experiment = @user.experiments.new
+    if !check_if_faculty
+      @experiment = @proposal.experiments.new
     else
       @errors = ["Only staffers can start an experiment"]
       redirect_to user_path(@user)
@@ -17,17 +18,17 @@ class ExperimentsController < ApplicationController
   def create
     @experiment = current_user.experiments.new(experiment_params)
     if @experiment.save
-      redirect_to @user
+      redirect_to @experiment
     else
       # binding.pry
-      @errors = @experiment.errors.messages
+      @errors = @experiment.errors.full_messages
       render :new
     end
   end
 
-  def update
-
-  end
+  # def update
+  #   @experiment =
+  # end
 
   private
 
