@@ -58,25 +58,25 @@ RSpec.describe ExperimentsController, :type => :controller do
 
   end
 
-  describe "GET #edit" do
-    it "re-directs to experiment page if experiment doesn't belong to user"
-    it "assigns experiment to @experiment"
-    it "renders 'edit' page"
+  # describe "GET #edit" do
+  #   it "re-directs to experiment page if experiment doesn't belong to user"
+  #   it "assigns experiment to @experiment"
+  #   it "renders 'edit' page"
 
-  end
+  # end
 
-  describe "PUT #update" do
-    context "when valid params are passed" do
-      it "updates @experiment with new params"
-      it "re-directs to the experiment page"
+  # describe "PUT #update" do
+  #   context "when valid params are passed" do
+  #     it "updates @experiment with new params"
+  #     it "re-directs to the experiment page"
 
-    end
+  #   end
 
-    context "when invalid params are passed" do
-      it "assigns errors to @errors"
-      it "re-renders edit experiment page"
-    end
+  #   context "when invalid params are passed" do
+  #     it "assigns errors to @errors"
+  #     it "re-renders edit experiment page"
+  #   end
 
-  end
+  # end
 
 end
