@@ -1,33 +1,45 @@
 <%= render "partials/header_bar" %>
-<h1> Proposal</h1>
+<div class="proposal-container">
 
-<h4> Details for this proposal<h4>
+  <div class="proposal-header">
+    <div class="prop-header-large">
+      <h1> Proposal</h1>
+    </div>
+      <div class="prop-header-small">
+        <h4> Details for this proposal<h4>
+      </div>
+  </div>
 
+  <div class="proposal-body-container">
 
-<h1 class="title">
-	<%= @proposal.title %>
-</h1>
+    <h1 class="proposal-title"><%= @proposal.title %></h1>
+    <p class="proposal-date">Submitted <%= time_ago_in_words(@proposal.created_at) %> ago</p>
 
-<p class="date">
-	Submitted <%= time_ago_in_words(@proposal.created_at) %> ago
-</p>
+    <div class="proposal-hypothesis">
+      <p class="proposal - body">Hypothesis: <%= @proposal.hypothesis %></p>
+    </div>
 
-<p class="body">
-		Hypothesis: <%= @proposal.hypothesis %><br><br>
+    <div class="proposal-summary">
+      <p>Summary: <%= @proposal.summary %></p>
+    </div>
 
-		Summary: <%= @proposal.summary %>
-</p>
+    <div class="proposal-status">
+      <div class="status">
+        <% if @proposal.active == true %>
+          <form class="new-experiment-button" method="get" action="/experiments/new">
+            <input type="hidden" name="proposal_id" value=<%=@proposal.id%>>
+            <input type="submit" value = "Click here to create an experiment on this proposal.">
+          </form>
+        <% else %>
+          Status: Closed
+        <% end %>
+      </div>
+    </div>
 
-<p class="status">
-		<% if @proposal.active == true %>
-			<form class="new-experiment-button" method="get" action="/experiments/new">
-				<input type="hidden" name="proposal_id" value=<%=@proposal.id%>>
-				<input type="submit" value = "Click here to create an experiment on this proposal.">
-			</form>
-		<% else %>
-			Status: Closed
-		<% end %>
-</p>
+  </div>
+
+</div>
+
 
 
 

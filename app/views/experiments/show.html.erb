@@ -41,7 +41,7 @@
     </div>
   <% end %>
   <div class="add-observation">
-      <a href="/experiments/<%=@experiment.id%>/observations/new">Add observation</a>
+    <%= link_to "new observation", new_experiment_observation_path(@experiment) %>
     </div>
   </div>
 
