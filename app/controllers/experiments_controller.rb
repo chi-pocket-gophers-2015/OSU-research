@@ -6,7 +6,7 @@ class ExperimentsController < ApplicationController
 
   def new
     @user = current_user
-    if @user.staffer
+    if !check_if_faculty
       @experiment = @user.experiments.new
     else
       @errors = ["Only staffers can start an experiment"]
