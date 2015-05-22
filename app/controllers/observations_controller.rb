@@ -13,8 +13,9 @@ class ObservationsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @experiment = Experiment.find_by_id(params[:experiment_id])
-    @observation = @experiment.observations.create(observation_params)
+    @observation = @experiment.observations.new(observation_params)
     if @observation.save
       redirect_to @experiment
     else

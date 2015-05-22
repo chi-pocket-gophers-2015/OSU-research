@@ -36,8 +36,12 @@ RSpec.describe ObservationsController, :type => :controller do
 		end
 
 		context "when invalid params are passed" do
-			# let(:bad_params) {experiment_id: nil}
-			it "re-renders the 'new' template"
+			let(:bad_params) {{experiment_id: 1}}
+			it "re-renders the 'new' template" do
+				# binding.pry
+				post :create, {experiment_id: experiment.id, observation: bad_params}
+				expect(response).to render_template(:new)
+			end
 		end
 	end
 end
