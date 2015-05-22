@@ -1,0 +1,7 @@
+<% @proposals.each do |proposal|%>
+<div class="ind-list-container">
+  <p class="prop-title"><%= link_to(proposal.title, proposal_path(proposal)) %></p>
+  <%= render 'partials/experiments_list', locals: {proposal: proposal} %>
+
+</div>
+<% end %>

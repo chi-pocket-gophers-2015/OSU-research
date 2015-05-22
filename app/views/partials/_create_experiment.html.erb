@@ -1,0 +1,12 @@
+<div class="proposal-status">
+    <div class="status">
+      <% if locals[:proposal].active == true %>
+        <form class="new-experiment-button" method="get" action="/experiments/new">
+          <input type="hidden" name="proposal_id" value=<%=locals[:proposal].id%>>
+          <input type="submit" value = "Create an experiment">
+        </form>
+      <% else %>
+        Status: Closed
+      <% end %>
+    </div>
+  </div>

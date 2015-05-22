@@ -1,4 +1,15 @@
 <%= render 'partials/header_bar' %>
+<% if @errors %>
+  <div id="errors">
+    <h2><%= pluralize(@errors.count, "error") %> prevented this post from saving</h2>
+      <ul>
+        <% @errors.each do |msg| %>
+          <li><%= msg %> </li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
+
 <div class="new-obs-container">
 <%= form_for(@experiment, class: "exp-new-form") do | f | %>
 <h1 id="new-exp-head">New Experiment</h1>

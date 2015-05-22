@@ -19,7 +19,7 @@ class ExperimentsController < ApplicationController
     if @experiment.save
       redirect_to @experiment
     else
-      # binding.pry
+      @proposal = Proposal.find_by_id(params[:experiment][:proposal_id])
       @errors = @experiment.errors.full_messages
       render :new
     end

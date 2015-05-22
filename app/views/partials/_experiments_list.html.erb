@@ -1,5 +1,5 @@
 <% if locals[:proposal].experiments.length > 0 %>
-<p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>
+<p id="card-sub-title"><strong><%= link_to("#{locals[:proposal].experiments.length} experiments on this proposal", proposal_path) %></strong></p>
   <%locals[:proposal].experiments.each do | exp |%>
     <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
   <% end %>
