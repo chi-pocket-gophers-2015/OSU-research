@@ -11,6 +11,11 @@
   width: 50%;
 }
 
+
+.nav-bar-header > h1 {
+  display: inline;
+}
+
 .nav-bar-header > h1 > a {
   margin: 0;
   color: #DADADA;
