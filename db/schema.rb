@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20150520190143) do
 
   create_table "observations", :force => true do |t|
     t.integer  "experiment_id"
-    t.string   "body"
+    t.text     "body"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
