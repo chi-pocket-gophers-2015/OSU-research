@@ -5,7 +5,7 @@ RSpec.feature "Experiments", :type => :feature do
   let!(:fac) { User.create!(email: 'jjoyce1@me.com', username: 'staff', password: 'password', faculty: true) }
   let!(:rp) { Category.create!(name: "Risk Perception") }
   let!(:prop) { Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: fac.id, category_id: rp.id) }
-
+  let!(:exp) { prop.experiments.create!(title: 'hi', procedure: 'things', results: 'more things', conclusion: 'me smart', staffer_id: staff.id)}
 
   scenario "click on new experiment link" do
     allow(User).to receive(:find_by_id).and_return(staff)
@@ -25,9 +25,12 @@ RSpec.feature "Experiments", :type => :feature do
     expect(current_path).to eq(experiment_path(Experiment.last))
   end
 
-  scenario "click on show experiment link"
-    # allow(User).to receive(:find_by_id).and_return(staff)
-    # visit proposal_path
+  # scenario "click on show experiment link" do
+  #   allow(User).to receive(:find_by_id).and_return(staff)
+  #   visit proposal_path(prop)
+  #   click_button(exp.title)
+  #   expect(current_path).to eq(experiment_path(exp))
+  # end
 
   scenario "create observation"
     # allow(User).to receive(:find_by_id).and_return(staff)
