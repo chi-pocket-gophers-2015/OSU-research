@@ -1,4 +1,18 @@
 <%= render "partials/header_bar" %>
+
+  <% if @errors %>
+    <div id="errors">
+      <h2><%= pluralize(@errors.count, "error") %> prevented this post from saving</h2>
+        <ul>
+          <% @errors.each do |msg| %>
+            <li><%= msg %> </li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+<h1 class="fac-head"> Faculty Homepage </h1>
+
   <div class="list-container" id="proposals-list">
 
     <div id="proposal-header"><h1>Your Proposals</h1></div>

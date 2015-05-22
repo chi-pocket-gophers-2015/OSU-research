@@ -5,6 +5,11 @@
     <h4>By: <%= @experiment.staffer.username %></h4>
   </div>
   <div class="exp-body-container">
+    <div class="exp-proposal-container">
+      <h1>Proposal: </h1>
+      <p><strong>Title:   </strong><%= @experiment.proposal.title%></p> <br>
+      <p><strong>Summary:</strong> <%= @experiment.proposal.summary%> </p>
+    </div>
     <div class = "procedure-header">
       <h1>Procedure:</h1>
     </div>
@@ -12,5 +17,36 @@
       <%=@experiment.procedure %>
     </div>
 
+    <div class = "procedure-header">
+      <h1>Results:</h1>
+    </div>
+    <div clss="procedure-body">
+      <%=@experiment.results %>
+    </div>
+
+    <div class = "procedure-header">
+      <h1>Conclusion:</h1>
+    </div>
+    <div clss="procedure-body">
+      <%=@experiment.conclusion %>
+    </div>
   </div>
+  <div class="observation-container">
+    <div class="observation-header">
+      <h1>Observations</h1>
+      <h6 id="from-exp">from the experimenter</h6>
+  </div>
+  <% @experiment.observations.all.each do | obs |%>
+    <div class="ind-observation">
+      <%= obs.body %>
+      <% if obs.staffer == current_user %>
+        <%= button_to("Delete", experiment_observation_path(@experiment.id, obs.id), method: :delete, class: "obs-delete", :confirm => "Are you sure you want to delete this observation?") %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="add-observation">
+    <%= link_to "new observation", new_experiment_observation_path(@experiment) %>
+    </div>
+  </div>
+
 </div>

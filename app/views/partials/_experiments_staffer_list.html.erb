@@ -1,7 +1,9 @@
-<p id="card-sub-title">&#x25BC; Your experiments on this proposal &#x25BC;</p>
+<% if locals[:proposal].experiments.pluck(:staffer_id).include?(current_user.id) %>
+  <p id="card-sub-title"> &#x25BC; Your experiments on this proposal &#x25BC;</p>
   <%locals[:proposal].experiments.each do | exp |%>
-    <% if current_user.experiments.include?(exp) %>
-    <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
+    <% if existing_experiments?(exp) %>
+      <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
     <% end %>
   <% end %>
+<% end %>
 

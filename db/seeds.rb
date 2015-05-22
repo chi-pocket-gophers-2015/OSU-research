@@ -7,8 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(email: 'jjoyce1@me.com', username: 'jjoyce1', password: 'password', faculty: true)
-User.create!(email: 'johnny@jonathan.com', username: 'johnnycoolshades', password: 'password', faculty: false)
-User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
+
 
 Category.create!(name: "Risk Perception")
 Category.create!(name: "Risky and Nonrisky decisions")
@@ -20,6 +19,16 @@ Category.create!(name: "Experimental Economics")
 Category.create!(name: "Probability Theory")
 Category.create!(name: "Game Theory")
 
-Proposal.create!(title: "Science stuff", hypothesis: "I think science is scienterrific!", active: true, summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
-Proposal.create!(title: "MORE SCIENCE PLEASE stuff", hypothesis: "I think science is scienterrific!", active: true, summary: "Find out if it truly is", faculty_id: 1, category_id: 1)
-Experiment.create!(staffer_id: 2, proposal_id: 1, title: "Finding out if science is cool", results: "Inconclusive", conclusion: "I don't know man", procedure: "Do shit idk")
+
+i = 1
+while i < 10
+  User.create!(email: "email"+ i.to_s + "@aol.com", username: 'user' + i.to_s, password: 'password', faculty: true)
+
+  User.create!(email: "jjoyce"+ i.to_s + "@me.com", username: 'jjoyce' + i.to_s, password: 'password', faculty: false)
+
+  3.times { Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i) }
+
+  5.times { Experiment.create!(staffer_id: i, proposal_id: i, title: Faker::Name.title, results: Faker::Lorem.sentence, conclusion: Faker::Lorem.paragraph, procedure: Faker::Lorem.paragraph) }
+  10.times { Observation.create!(experiment_id: i, body: Faker::Lorem.sentence) }
+  i += 1
+end

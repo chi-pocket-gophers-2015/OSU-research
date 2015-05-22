@@ -1,10 +1,33 @@
-<h1> Staffers</h1>
+<%= render "partials/header_bar" %>
+
+  <% if @errors %>
+    <div id="errors">
+      <h2><%= pluralize(@errors.count, "error") %> prevented this post from saving</h2>
+        <ul>
+          <% @errors.each do |msg| %>
+            <li><%= msg %> </li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+<h1> Staffer Homepage</h1>
 <!-- staffers can view proposals, click on one and create a new experiment -->
+<h4> Click on a proposal to view </h4>
+  <% @staff_proposals.each do |proposal| %>
+  <div class="proposal wrapper">
+    <h2 class="proposal-title">
+      <%= link_to proposal.title, proposal %>
+    </h2>
+    <p class="date"><%= proposal.created_at.strftime("%B, %d, %Y") %></p>
+  </div>
+<% end %>
+
 <h4> Choose an experiment to view <h4>
 
 <!-- need to get proposals controller -->
 
-<% @user.experiments.each do |experiment| %>
+<% @user.experiments.order('created_at desc').each do |experiment| %>
 	<div class="experiment wrapper">
 		<h2 class="title">
 			<%= link_to experiment.title, experiment %>

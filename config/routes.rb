@@ -1,9 +1,14 @@
 OsuResearch::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
-  resources :categories, except: [:delete]
+  resources :categories, only: [:show, :index]
   resources :users, except: [:edit, :update]
   resources :proposals, only: [:show, :new, :create]
-  resources :experiments, except: [:delete]
+  resources :experiments, except: [:destroy]
+  # resources :observations, only: [:new, :show, :create, :destroy]
+  resources :experiments do
+    resources :observations, only: [:new, :create, :destroy]
+  end
+
   root to: "sessions#new"
 end
   # The priority is based upon order of creation:
