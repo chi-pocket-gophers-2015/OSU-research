@@ -4,7 +4,7 @@ RSpec.describe ExperimentsController, :type => :controller do
 
   User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
   Category.create!(name: "Risk Perception")
-  Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i)
+  Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: 1, category_id: 1)
 
   describe "GET #new" do
     it "assigns the current user to @user"
