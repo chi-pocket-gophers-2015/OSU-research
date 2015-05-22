@@ -16,20 +16,7 @@
   <div class="list-container" id="proposals-list">
 
     <div id="proposal-header"><h1>Your Proposals</h1></div>
-
-    <% @proposals.each do |proposal|%>
-      <div class="ind-list-container">
-        <p class="prop-title"><%= link_to(proposal.title, proposal_path(proposal)) %></p>
-        <p><strong>Hypothesis:</strong> <%= proposal.hypothesis %></p><br>
-
-        <p id="card-sub-title">&#x25BC; Experiments on this proposal &#x25BC;</p>
-
-      <%proposal.experiments.each do | exp |%>
-        <p class="experiment-title"><%= link_to(exp.title, experiment_path) %></p>
-        <% end %>
-
-      </div>
-      <% end %>
+      <%= render 'partials/proposal_list' %>
       <div class="extra-prop-links">
       <%= link_to("New Proposal", new_proposal_path, :class => "new-prop-class") %>
       </div>

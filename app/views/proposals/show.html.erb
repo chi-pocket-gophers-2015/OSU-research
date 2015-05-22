@@ -1,17 +1,8 @@
 <%= render "partials/header_bar" %>
 <div class="proposal-container">
-  <div class="proposal-status">
-      <div class="status">
-        <% if @proposal.active == true %>
-          <form class="new-experiment-button" method="get" action="/experiments/new">
-            <input type="hidden" name="proposal_id" value=<%=@proposal.id%>>
-            <input type="submit" value = "Create an experiment">
-          </form>
-        <% else %>
-          Status: Closed
-        <% end %>
-      </div>
-    </div>
+  <% if !check_if_faculty %>
+  <%= render 'partials/create_experiment', locals: {proposal: @proposal} %>
+  <% end %>
   <div class="proposal-header">
 
     <div class="prop-header-large">
@@ -28,6 +19,15 @@
         <h1> Hypothesis: </h1>
           <div class="proposal-summary">
             <p><%= @proposal.hypothesis %></p>
+          </div>
+      </div>
+
+      <div class="prop-header-small">
+        <h1> Experiments: </h1>
+          <div class="proposal-summary">
+          <% @proposal.experiments.each do |exp| %>
+            <p><%= link_to(exp.title + " by " + exp.staffer.username, experiment_path(exp))  %></p><br>
+          <% end %>
           </div>
       </div>
   </div>

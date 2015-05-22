@@ -78,6 +78,7 @@
 }
 
 .experiment-title {
+  display: none;
   margin-top: 1em;
   padding-bottom: 3em;
 }
