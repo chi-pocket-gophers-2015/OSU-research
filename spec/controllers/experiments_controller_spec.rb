@@ -1,16 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe ExperimentsController, :type => :controller do
-
-  User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false)
-  Category.create!(name: "Risk Perception")
-  Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: i, category_id: i)
+  let!(:fac) { User.create!(email: 'jjoyce1@me.com', username: 'fac', password: 'password', faculty: true) }
+  let!(:staff) { User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false) }
+  let!(:category) { Category.create!(name: "Risk Perception") }
+  let!(:proposal) { Proposal.create!(title: Faker::Lorem.sentence, hypothesis: Faker::Lorem.paragraph, active: true, summary: Faker::Lorem.paragraph, faculty_id: 1, category_id: 1) }
 
   describe "GET #new" do
-    it "assigns the current user to @user"
-    it "assigns the current proposal as @proposal"
-    it "assigns a new experiment instance as @experiment"
-    it "re-reoutes to the homepage if user isn't a staffer"
+    
+    it "assigns the current proposal as @proposal" do
+      session[:user_id] = staff.id
+      get :new, {proposal_id: proposal.id}
+      expect(assigns(:proposal)).to eq(proposal)
+    end
+    it "assigns a new experiment instance as @experiment" do
+      session[:user_id] = staff.id
+      get :new
+      expect(assigns(:experiment)).to be_an_instance_of(Experiment)
+    end
+    it "re-reroutes to the homepage if user isn't a staffer" do
+      session[:user_id] = fac.id
+      get :new
+      expect(response).to redirect_to(user_path(fac))
+    end
   end
 
   describe "POST #create" do
