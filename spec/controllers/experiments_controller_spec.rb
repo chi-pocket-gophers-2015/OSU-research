@@ -27,14 +27,33 @@ RSpec.describe ExperimentsController, :type => :controller do
 
   describe "POST #create" do
     context "when valid params are passed" do
-      it "saves new experiment as @experiment"
-      it "re-directs to the experiment page"
-
+      let(:good_params) {{title: "Awesome Experiment", procedure: "It's awesome", results: "results are crazy", conclusion: "THis is the conclusion", active: true}}
+      it "saves new experiment as @experiment" do
+        session[:user_id] = fac.id
+        post :create
+        expect { post :create, experiment: good_params}.to change(Experiment, :count).by(1)
+      end
+      it "re-directs to the experiment page" do
+        session[:user_id] = fac.id
+        post :create, experiment: good_params
+        expect(response).to redirect_to(experiment_path(assigns(:experiment)))
+      end
     end
 
     context "when invalid params are passed" do
-      it "assigns errors to @errors"
-      it "re-renders new experiment page"
+      let(:bad_params) {{title: nil, hypothesis: nil, status: nil}}
+      
+      it "assigns errors to @errors" do
+        session[:user_id] = staff.id
+        post :create, experiment: bad_params
+        expect(assigns(:errors)).to be_truthy
+      end
+
+      it "re-renders new experiment page" do
+        session[:user_id] = staff.id
+        post :create, experiment: bad_params
+        expect(response).to render_template(:new)
+      end
     end
 
   end
