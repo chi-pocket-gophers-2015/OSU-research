@@ -5,34 +5,38 @@ class ExperimentsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @proposal = Proposal.find_by_id(params[:proposal_id])
     if !check_if_faculty
-      @experiment = @user.experiments.new
+      @experiment = Experiment.new
     else
       @errors = ["Only staffers can start an experiment"]
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     end
   end
 
   def create
     @experiment = current_user.experiments.new(experiment_params)
     if @experiment.save
-      redirect_to @user
+      redirect_to @experiment
     else
       # binding.pry
-      @errors = @experiment.errors.messages
+      @errors = @experiment.errors.full_messages
       render :new
     end
   end
 
-  def update
+  # def edit
 
-  end
+  # end
+
+  # def update
+  #   @experiment =
+  # end
 
   private
 
   def experiment_params
-    params.require(:experiment).permit( :title, :results, :conclusion, :procedure)
+    params.require(:experiment).permit(:proposal_id, :title, :results, :conclusion, :procedure)
   end
 
 

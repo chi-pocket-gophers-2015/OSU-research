@@ -5,8 +5,8 @@ gem 'strong_parameters'
 gem 'bcrypt'
 gem 'pry'
 gem 'faker'
-gem 'factory_girl'
-gem 'simplecov'
+
+
 # gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -15,7 +15,10 @@ group :development, :test do
   gem 'sqlite3'
   gem 'capybara'
   gem 'rspec-rails', '~> 3.0'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
 end
+
 group :production do
   gem 'pg'
 end
