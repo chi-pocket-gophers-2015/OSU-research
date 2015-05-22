@@ -24,11 +24,19 @@ RSpec.describe ObservationsController, :type => :controller do
 
 	describe "POST #create" do
 		context "when valid params are passed" do
-			it "creates a new observation"
-			it "re-directs to the experiment page"			
+			let(:good_params) {{experiment_id: 1, body: "This here"}}
+			it "creates a new observation" do
+        expect { post :create, experiment_id: experiment.id, observation: good_params}.to change(Observation, :count).by(1)
+			end
+
+			it "re-directs to the experiment page" do
+				post :create, {experiment_id: experiment.id, observation: good_params}
+				expect(response).to redirect_to(experiment_path(assigns(:experiment)))
+			end		
 		end
 
 		context "when invalid params are passed" do
+			# let(:bad_params) {experiment_id: nil}
 			it "re-renders the 'new' template"
 		end
 	end
