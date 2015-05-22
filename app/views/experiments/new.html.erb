@@ -1,4 +1,7 @@
+<%= render 'partials/header_bar' %>
+<div class="new-obs-container">
 <%= form_for(@experiment, class: "exp-new-form") do | f | %>
+<h1 id="new-exp-head">New Experiment</h1>
   <%=f.text_field :title, placeholder: "Title" %>
   <%=f.text_field :procedure, placeholder: "Procedure" %>
   <%=f.text_field :results, placeholder: "Results" %>
@@ -6,3 +9,4 @@
   <%=f.hidden_field :proposal_id, value: @proposal.id %>
   <%= f.submit :submit, value: "Create!" %>
 <% end %>
+</div>

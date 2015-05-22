@@ -28,3 +28,12 @@
 .ind-topic-container:hover {
   background-color: #33CC33;
 }
+
+#topic-link {
+  color:#gray;
+  transition:color .2s ease-out;
+}
+
+#topic-link:hover {
+  color:white;
+}

@@ -4,7 +4,7 @@
   <div class="topic-name-container">
     <% @categories.each do |cat| %>
       <div class="ind-topic-container">
-        <%= link_to(cat.name, category_path(cat)) %>
+        <%= link_to(cat.name, category_path(cat), id: "topic-link") %>
       </div>
     <% end %>
   </div>
