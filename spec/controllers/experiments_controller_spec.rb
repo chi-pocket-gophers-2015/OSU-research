@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ExperimentsController, :type => :controller do
+
   let!(:fac) { User.create!(email: 'jjoyce1@me.com', username: 'fac', password: 'password', faculty: true) }
   let!(:staff) { User.create!(email: 'jjoyce2@me.com', username: 'jjoyce2', password: 'password', faculty: false) }
   let!(:category) { Category.create!(name: "Risk Perception") }
