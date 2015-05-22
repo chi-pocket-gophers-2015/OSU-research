@@ -8,4 +8,5 @@ class Proposal < ActiveRecord::Base
   def close
     self.active = false
   end
+
 end
