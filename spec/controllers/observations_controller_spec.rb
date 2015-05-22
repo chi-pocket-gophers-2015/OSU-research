@@ -2,12 +2,34 @@ require 'rails_helper'
 
 RSpec.describe ObservationsController, :type => :controller do
 
+	let!(:experiment) { Experiment.create!(title: 'This Experiment', procedure: 'This Procedure', results: 'These Results', conclusion: 'This conclusion', active: true) }
+	let!(:observation) {Observation.create!(experiment_id: experiment.id, body: "Hello!")}
+
 	describe "GET #new" do
+		it "assigns a new observation instance as @observation to an experiment" do			
+			get :new, {experiment_id: experiment.id}
+	  	expect(assigns(:observation)).to be_an_instance_of(Observation)
+		end
 	end
 
-	describe "POST #destroy" do
+	describe "DELETE #destroy" do
+		it "deletes observation at @observation" do
+			expect { delete :destroy , experiment_id: experiment.id, id: observation.id}.to change(Observation, :count).by(-1)
+		end
+		it "re-directs to the experiment page" do
+			delete :destroy, {experiment_id: experiment.id, id: observation.id}
+			expect(response).to redirect_to(experiment_path(assigns(:experiment)))
+		end
 	end
 
 	describe "POST #create" do
+		context "when valid params are passed" do
+			it "creates a new observation"
+			it "re-directs to the experiment page"			
+		end
+
+		context "when invalid params are passed" do
+			it "re-renders the 'new' template"
+		end
 	end
 end
