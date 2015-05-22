@@ -1,5 +1,10 @@
+<%= render 'partials/header_bar' %>
+<div class="new-obs-container">
+
 <%= form_for([@experiment, @observation], class: "obs-new-form") do | f | %>
+  <h1 id='new-obv-head'>New Observation</h1>
   <%=f.text_field :body, placeholder: "Write your observation here" %>
   <%=f.hidden_field :experiment_id, value: @experiment.id %>
   <%= f.submit :submit, value: "Create!" %>
 <% end %>
+</div>
