@@ -18,7 +18,7 @@
 
 body {
   background-color: #EAEAEA;
-  padding-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 a {
@@ -28,5 +28,5 @@ a {
 }
 
 a:hover {
-  color: #FFFFFF;
+  color:rgb(188, 0, 0);
 }

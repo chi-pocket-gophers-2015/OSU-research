@@ -75,7 +75,7 @@ div.procedure-body{
 .add-observation {
   float: right;
   display: inline-block;
-  background-color: green;
+  background-color: #00CC00;
   width: 80%;
   margin-top: 3em;
   border-radius: 3em;
@@ -83,9 +83,18 @@ div.procedure-body{
   margin-right: auto;
   text-align: center;
   padding: 2em;
+  transition: background-color .2s ease-out;
+}
+
+.add-observation:hover {
+  background-color: #33CC33;
 }
 
 .add-observation > * {
+  color: #EEEEEE;
+}
+
+.add-observation > *:hover {
   color: white;
 }
 
@@ -102,6 +111,12 @@ input[type='submit'].obs-delete{
   background: none;
   border-radius: 1em;
   border:none;
+  border: 1px solid gray;
+}
+
+input[type='submit'].obs-delete:hover{
+  border: 1px solid white;
+  background-color: red;
 }
 
 #from-exp {
