@@ -3,9 +3,17 @@
   padding-top: 3%;
   box-shadow: 3px 3px 6px 3px rbga(0,0,0,.1);
 }
-html {
-}
+.fac-head {
+  text-align: center;
+  font-weight: 100;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+  padding-bottom: 1em;
+  border-bottom: 1px solid black;
 
+}
 .edit-button {
   float: right;
   border-radius: 1em;

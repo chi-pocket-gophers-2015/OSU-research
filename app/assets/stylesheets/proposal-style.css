@@ -1,0 +1,59 @@
+.proposal-container {
+  width: 60%;
+  padding-top: 3%;
+  padding-left: 4em;
+  margin-top: 3em;
+  padding-bottom: 3em;
+  /*height: 100%;*/
+  padding-right: 4em;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 3em;
+  box-shadow: 0em 6em 5em 1em rgba(0, 0, 0, .1);
+}
+
+
+.proposal-title {
+  font-weight: 100;
+
+}
+
+.proposal-date {
+  font-weight: 100;
+  margin-bottom: 1em;
+  font-size: .8em;
+  /*font-style: italic;*/
+}
+
+
+.prop-header-small > * {
+  font-weight: 100;
+  margin-bottom: .3em;
+}
+
+.proposal-summary {
+  margin-left: 2em;
+  font-weight: 100;
+  margin-bottom: 2em;
+}
+
+.proposal-status {
+  float: right;
+}
+
+.new-experiment-button > input[type="submit"] {
+  width: 100%;
+  background: none;
+  background-color: #29A329;
+  padding: 1em;
+  border-radius: 1em;
+  border:none;
+  color: #EAEAEA;
+  transition: background-color .2s ease-out;
+}
+
+.new-experiment-button > input[type="submit"]:hover {
+  background-color: #33CC33;
+  color: white;
+}
+
