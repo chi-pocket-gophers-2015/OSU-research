@@ -1,5 +1,5 @@
 <%= render "partials/header_bar" %>
-
+<div class="staff-container">
   <% if @errors %>
     <div id="errors">
       <h2><%= pluralize(@errors.count, "error") %> prevented this post from saving</h2>
@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-<h1> Staffer Homepage</h1>
-<!-- staffers can view proposals, click on one and create a new experiment -->
-<h4> Click on a proposal to view </h4>
-  <% @staff_proposals.each do |proposal| %>
-  <div class="proposal wrapper">
-    <h2 class="proposal-title">
-      <%= link_to proposal.title, proposal %>
-    </h2>
-    <p class="date"><%= proposal.created_at.strftime("%B, %d, %Y") %></p>
+  <h1 class="fac-head"> Staffer Homepage</h1>
+  <!-- staffers can view proposals, click on one and create a new experiment -->
+    <div class="prop-div list-container">
+    <h2> Click on a proposal to view </h2>
+      <% @staff_proposals.order('created_at desc').each do |proposal| %>
+      <div class="ind-list-container">
+        <h2 class="prop-title">
+          <%= link_to proposal.title, proposal %>
+        </h2>
+      </div>
+    <% end %>
+    </div>
+
+
+  <div class="prop-div list-container">
+    <h2 class="exp-head"> Choose an experiment to view <h2>
+    <% @user.experiments.order('created_at desc').each do |experiment| %>
+    	<div class="ind-list-container">
+    		<h3 class="prop-title exp-ind">
+    			<%= link_to experiment.title, experiment %>
+    		</h3>
+    	</div>
+    <% end %>
   </div>
-<% end %>
-
-<h4> Choose an experiment to view <h4>
-
-<!-- need to get proposals controller -->
-
-<% @user.experiments.order('created_at desc').each do |experiment| %>
-	<div class="experiment wrapper">
-		<h2 class="title">
-			<%= link_to experiment.title, experiment %>
-		</h2>
-		<p class="date"><%= experiment.created_at.strftime("%B, %d, %Y") %></p>
-	</div>
-<% end %>
+</div>
