@@ -1,31 +1,47 @@
 <%= render "partials/header_bar" %>
-<h1> Proposal</h1>
+<div class="proposal-container">
 
-<h4> Details for this proposal<h4>
+  <div class="proposal-header">
+    <div class="prop-header-large">
+      <h1> Proposal</h1>
+    </div>
+      <div class="prop-header-small">
+        <h4> Details for this proposal<h4>
+      </div>
+  </div>
+
+  <div class="proposal-body-container">
+
+    <h1 class="proposal-title"><%= @proposal.title %></h1>
+    <p class="proposal-date">Submitted <%= time_ago_in_words(@proposal.created_at) %> ago</p>
+
+    <div class="proposal-hypothesis">
+      <p class="proposal - body">Hypothesis: <%= @proposal.hypothesis %></p>
+    </div>
+
+    <div class="proposal-summary">
+      <p>Summary: <%= @proposal.summary %></p>
+    </div>
+
+    <div class="proposal-status">
+      <div class="status">
+      <% if @proposal.active == true %>
+        <p> Status: Open </p>
+        <p>Click here to create an experiment on this proposal. </p>
+        <% else %>
+          Status: Closed
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 
-<h1 class="title">
-	<%= @proposal.title %>
-</h1>
 
-<p class="date">
-	Submitted <%= time_ago_in_words(@proposal.created_at) %> ago
-</p>
 
-<p class="body">
-		Hypothesis: <%= @proposal.hypothesis %><br><br>
 
-		Summary: <%= @proposal.summary %>
-</p>
-
-<p class="status">
-		<% if @proposal.active == true %>
-			<p> Status: Open </p>
-      <p>Click here to create an experiment on this proposal. </p>
-		<% else %>
-			Status: Closed
-		<% end %>
-</p>
 
 
 

@@ -4,9 +4,9 @@ OsuResearch::Application.routes.draw do
   resources :users, except: [:edit, :update]
   resources :proposals, only: [:show, :new, :create]
   resources :experiments, except: [:delete]
-  resources :observations, only: [:new, :show, :create, :destroy]
+  # resources :observations, only: [:new, :show, :create, :destroy]
   resources :experiments do
-    resources :observations
+    resources :observations, only: :new
   end
 
   root to: "sessions#new"

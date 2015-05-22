@@ -1,20 +1,11 @@
 class ObservationsController < ApplicationController
 
-def index
 
-end
+  def new
+    @observation = Observation.new
+  end
 
-def show
+  def show
 
-end
-
-def new
-  @observation = Observation.new
-end
-
- def create
-
- end
-
-
+  end
 end
