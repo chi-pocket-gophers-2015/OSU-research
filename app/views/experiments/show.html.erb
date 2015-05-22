@@ -36,7 +36,7 @@
       <h1>Observations</h1>
       <h6 id="from-exp">from the experimenter</h6>
   </div>
-  <% @experiment.observations.all.each do | obs |%>
+  <% @experiment.observations.order('created_at desc').each do | obs |%>
     <div class="ind-observation">
       <%= obs.body %>
       <% if obs.staffer == current_user %>
