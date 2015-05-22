@@ -1,0 +1,42 @@
+.new-obs-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+form.new_observation {
+  width: 30%;
+  background-color: white;
+  padding-bottom: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border-radius: 1em;
+  box-shadow: 0px 0px 24px 6px rgba(0, 0, 0, .1);
+}
+
+form.new_observation > * {
+  display: block;
+  margin-top: 5%;
+  width: 40%;
+  padding: 1em;
+  border-radius: 1em;
+  border:none;
+  box-shadow: inset 0px 0px 1px 3px rgba(0,0,0,.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#new-obv-head {
+  box-shadow: none;
+  padding: none;
+  margin: none;
+  font-weight: 100;
+  width: 100%;
+  margin-left: 22.5%;
+}
+
+.new_observation > input[type="submit"] {
+  box-shadow: none;
+}
