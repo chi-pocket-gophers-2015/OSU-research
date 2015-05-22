@@ -1,0 +1,5 @@
+<%= form_for([@experiment, @observation], class: "obs-new-form") do | f | %>
+  <%=f.text_field :body, placeholder: "Write your observation here" %>
+  <%=f.hidden_field :experiment_id, value: @experiment.id %>
+  <%= f.submit :submit, value: "Create!" %>
+<% end %>
