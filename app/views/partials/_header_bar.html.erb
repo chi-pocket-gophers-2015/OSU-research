@@ -1,6 +1,9 @@
 <nav class="nav-bar-global">
   <div class="nav-bar-header">
     <h1> <%= link_to(current_user.username, current_user) %> </h1>
+    <% if check_if_faculty %>
+      <h1 id="new-prop-head"><%= link_to("New Proposal", new_proposal_path) %></h1>
+    <% end %>
   </div>
 
   <div class="nav-bar-buttons">
